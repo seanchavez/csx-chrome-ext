@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Focus",
+  "version": "1.0",
+  "description": "Prevents one from being distracted by YouTube videos",
+  "content-scripts": [
+    {
+      "matches": ["https://youtube.com/*"],
+      "js": ["./main.js"]
+    }
+  ]
+}
