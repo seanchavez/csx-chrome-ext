@@ -3,6 +3,9 @@
   "name": "Focus",
   "version": "1.0",
   "description": "Prevents one from being distracted by YouTube videos",
+  "web_accessible_resources": [
+    "images/aishath-naj-662589-unsplash.jpg"
+  ],
   "content_scripts": [
     {
       "matches": ["https://*.youtube.com/*"],
