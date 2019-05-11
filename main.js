@@ -1,15 +1,18 @@
 console.log('FUCK')
-const page = $('#page-manager')  //document.querySelector('#page-manager');
+//const page = $('#page-manager')  
+const page = document.querySelector('#page-manager');
 //const pageParent = page.parent()
-const content = $('#content')
-page.remove()  //page.parentNode.removeChild(page);
+//const content = $('#content')
+const content = document.querySelector('#content')
+//page.remove()  
+page.parentNode.removeChild(page);
 const imgURL = chrome.runtime.getURL("aishath-naj-662589-unsplash.jpg")
 const newPageManager = document.createElement("ytd-page-manager")
 newPageManager.id = "bullshit"
 const img = document.createElement("img")
 img.src = imgURL
 newPageManager.appendChild(img)
-content.appendChild(div)
+content.appendChild(newPageManager)
 //content.appendChild(img)
 // const image = $('<img />')
 //   .attr('src', imgURL)
