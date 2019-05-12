@@ -11,8 +11,15 @@ const imgURL = chrome.runtime.getURL("images/aishath-naj-662589-unsplash.jpg")
 const div = document.createElement("div")
 //newPageManager.id = "bullshit"
 div.id = "fuck"
+const message = document.createElement("h1")
+message.className = "fancy-text"
+message.innerHTML = "Keep pushing... you'll get there."
+message.style.margin = "60px 0px 0px 75px" 
+div.appendChild(message)
 const img = document.createElement("img")
 img.src = imgURL
+img.height = 840
+img.width = 1260
 div.appendChild(img)
 //newPageManager.appendChild(div)
 content.appendChild(div)
