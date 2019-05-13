@@ -7,17 +7,26 @@ const content = document.querySelector("#content");
 //page.remove()
 page.parentNode.removeChild(page);
 //const imgURL = chrome.runtime.getURL("images/aishath-naj-662589-unsplash.jpg")
-const imgUrl = fetch("https://picsum.photos/list")
-  .then(response => response.json())
-  .then(imageArr => imageArr[0])
-  .then(image => {
-    chrome.runtime.getURL(
-       "https://unsplash.it/1200/800?image=" + image.id
-     );
-  }) //[Math.floor(Math.random() * photoArr.length)]);
-  .catch(err => console.error(err))
+const asyncFetch = async () => {
+  try {
+    const result = await fetch("https://picsum.photos/list")
+      .then(response => response.json())
+      .then(imageArr => imageArr[0])
+      .then(image => {
+        return chrome.runtime.getURL(
+          "https://unsplash.it/1200/800?image=" + image.id
+        );
+      });
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
+const imgURL = asyncFetch().then(url => JSON.stringify(url));
+//[Math.floor(Math.random() * photoArr.length)]);
+//.catch(err => console.error(err));
 //const imgURL = chrome.runtime.getURL(
- // "https://unsplash.it/1200/800?image=" + image.id
+// "https://unsplash.it/1200/800?image=" + image.id
 //);
 //const newPageManager = document.createElement("ytd-page-manager")
 const div = document.createElement("div");
