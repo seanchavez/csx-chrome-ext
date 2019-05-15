@@ -1,4 +1,4 @@
-console.log("FUCK");
+console.log("FUUUCK");
 //const page = $('#page-manager')
 const page = document.querySelector("#page-manager");
 //const pageParent = page.parent()
